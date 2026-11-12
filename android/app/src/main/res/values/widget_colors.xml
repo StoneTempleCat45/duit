@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Widget colours in light mode. Dark mode versions are in values-night. -->
+<resources>
+    <color name="widget_bg">#FFFFFF</color>
+    <color name="widget_text">#141A2B</color>
+    <color name="widget_muted">#5D6680</color>
+    <color name="widget_accent">#2F4BD8</color>
+    <color name="widget_on_accent">#FFFFFF</color>
+    <color name="widget_track">#E3E7F0</color>
+    <color name="widget_warning">#FF9F43</color>
+    <color name="widget_danger">#D23B4B</color>
+</resources>

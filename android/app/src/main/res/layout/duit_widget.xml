@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Layout of the Duit home screen widget. Text is filled in by DuitWidgetProvider.kt. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/widget_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/widget_bg"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Top row: brand and today's spending -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="sans-serif-black"
+            android:text="@string/widget_brand"
+            android:textColor="@color/widget_accent"
+            android:textSize="15sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/widget_today"
+            android:textColor="@color/widget_muted"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/today_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:fontFamily="sans-serif-medium"
+            android:text="RM 0.00"
+            android:textColor="@color/widget_text"
+            android:textSize="13sp" />
+    </LinearLayout>
+
+    <!-- Money left this month -->
+    <TextView
+        android:id="@+id/left_value"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:ellipsize="end"
+        android:fontFamily="sans-serif-black"
+        android:maxLines="1"
+        android:text="RM 0.00"
+        android:textColor="@color/widget_text"
+        android:textSize="26sp" />
+
+    <TextView
+        android:id="@+id/left_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="@string/widget_left_label"
+        android:textColor="@color/widget_muted"
+        android:textSize="12sp" />
+
+    <!-- Budget used. Only one bar is visible, coloured by level. -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="8dp"
+        android:layout_marginTop="10dp">
+
+        <ProgressBar
+            android:id="@+id/progress_normal"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="8dp"
+            android:max="100"
+            android:progress="0"
+            android:progressDrawable="@drawable/widget_progress_normal" />
+
+        <ProgressBar
+            android:id="@+id/progress_warning"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="8dp"
+            android:max="100"
+            android:progress="0"
+            android:progressDrawable="@drawable/widget_progress_warning"
+            android:visibility="gone" />
+
+        <ProgressBar
+            android:id="@+id/progress_over"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="8dp"
+            android:max="100"
+            android:progress="0"
+            android:progressDrawable="@drawable/widget_progress_over"
+            android:visibility="gone" />
+    </FrameLayout>
+
+    <!-- Bottom row: summary line and quick-add button -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/caption"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="@color/widget_muted"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/add_button"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/widget_add_bg"
+            android:contentDescription="@string/widget_add"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:text="+"
+            android:textColor="@color/widget_on_accent"
+            android:textSize="24sp" />
+    </LinearLayout>
+</LinearLayout>
